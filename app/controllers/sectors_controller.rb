@@ -17,6 +17,6 @@ end
 private
 
     def sector_params
-        params.permit(:title )
+        params.permit(:title, :level )
     end
 end
