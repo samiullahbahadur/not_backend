@@ -1,18 +1,22 @@
-database:
-  - name: postgres
+databases:
+  - name: Not_coding_challenge
+    databaseName: not_backend_production
+    user: not_backend
 
- services:
-   - type: web
-     name: rails
-     env: ruby
-     buildCommand:  "./bin/render-build.sh"
-     startCommand: bundle exec rails s
-     envVars:
-      - key: RAILS_MASTER_KEY
-        aync: false
+services:
+  - type: web
+    name: Not_coding_challenge
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: not_backend_production
           property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
+
 
 
