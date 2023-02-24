@@ -1,6 +1,5 @@
 database:
   - name: postgres
-    ipAllwoList: []
 
  services:
    - type: web
