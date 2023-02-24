@@ -54,7 +54,7 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
-
+  #...ENV["SECRET_KEY_BASE"] || credentials.secret_key_base || secrets.secret_key_base...
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 end
